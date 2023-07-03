@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cGallegosTarea.MainPage">
+
+    <StackLayout>
+        <Label Text="TABLA PROMOCION" FontSize="20" HorizontalTextAlignment="Center"></Label>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="id_producto" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Text="nombre_producto" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="1"></Label>
+            <Label Text="descripcion_producto" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="2"></Label>
+            <Label Text="precio_promocion" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="3"></Label>
+            <Label Text="condicion_promocion" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="4"></Label>
+            <Label Text="codigo_promocion" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="5"></Label>
+            <Label Text="producto_relacionado" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="6"></Label>
+
+        </Grid>
+        <ListView x:Name="listaEstudiantes">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding id_producto}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="0"></Label>
+                                <Label Text="{Binding nombre_producto}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="1"></Label>
+                                <Label Text="{Binding descripcion_producto}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="2"></Label>
+                                <Label Text="{Binding precio_promocion}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="3"></Label>
+                                <Label Text="{Binding condicion_promocion}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="4"></Label>
+                                <Label Text="{Binding codigo_promocion}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="5"></Label>
+                                <Label Text="{Binding producto_relacionado}" TextColor="black" FontSize="18" Grid.Row="0" Grid.Column="6"></Label>
+
+                            </Grid>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <Button x:Name="btnMonstrar" Text="Mostrar" Clicked="btnMonstrar_Clicked"></Button>
+    </StackLayout>
+
+</ContentPage>

@@ -13,9 +13,9 @@ namespace cGallegosTarea
 {
     public partial class MainPage : ContentPage
     {
-        private string Url = "http://10.1.0.32/promocion/post.php";
+        private string Url = "http://10.1.0.190:3000/api/v1/products/";
         private HttpClient cliente = new HttpClient();
-        private ObservableCollection<Promocion> post;
+        private ObservableCollection<Productos> post;
         public MainPage()
         {
             InitializeComponent();
@@ -25,16 +25,16 @@ namespace cGallegosTarea
         public async void ObtenerDatos()
         {
             var contenido = await cliente.GetStringAsync(Url);
-            List<Promocion> listaPost = JsonConvert.DeserializeObject<List<Promocion>>(contenido);
-            post = new ObservableCollection<Promocion>(listaPost);
-            listaEstudiantes.ItemsSource = post;
+            List<Productos> listaPost = JsonConvert.DeserializeObject<List<Productos>>(contenido);
+            post = new ObservableCollection<Productos>(listaPost);
+            listaProductos.ItemsSource = post;
         }
         private async void btnMonstrar_Clicked(object sender, EventArgs e)
         {
             var contenido = await cliente.GetStringAsync(Url);
-            List<Promocion> listaPost = JsonConvert.DeserializeObject<List<Promocion>>(contenido);
-            post = new ObservableCollection<Promocion>(listaPost);
-            listaEstudiantes.ItemsSource = post;
+            List<Productos> listaPost = JsonConvert.DeserializeObject<List<Productos>>(contenido);
+            post = new ObservableCollection<Productos>(listaPost);
+            listaProductos.ItemsSource = post;
         }
     }
 }
